@@ -1,0 +1,79 @@
+body {
+	margin: 0px;
+}
+.user_stat_bar {
+	width: 100%;
+	height: 30px;
+	/* This line makes the text center in the bar */
+	line-height: 30px;
+	background: #222;
+	color: white;
+	font-size: 1em;
+	font-family: 'Myriad Pro', sans;
+	padding-left: 5px;
+}
+.user_stat_bar .user_name_btn {
+	float:left;
+	margin:auto;
+	/*width:30%;*/
+	color: white;
+	text-decoration: none;
+	background-color: #222;
+	text-shadow: 0 0 0 #000;
+	display:block;
+	height: 100%;
+	padding-right: 5px;
+	padding-left: 5px;
+	transition: background-color 3s, color 1s, text-shadow 0.75s;
+}
+.user_stat_bar .user_name_btn:hover {
+	color: #A8A8FF;
+	text-shadow: 0 0 5px #FFFFFF;
+	background-color: #333;
+}
+.user_stat_bar .signin_out_btn {
+	color: white;
+	text-decoration: none;
+	background-color: #222;
+	text-shadow: 0 0 0 #000;
+	display:block;
+	float:right;
+	height: 100%;
+	padding-right: 15px;
+	padding-left: 5px;
+	transition: background-color 3s, color 1s, text-shadow 0.75s;
+}
+.user_stat_bar .signin_out_btn:hover {
+	color: #A8A8FF;
+	text-shadow: 0 0 5px #FFFFFF;
+	background-color: #333;
+}
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+#user_login_menu {
+	display: none;
+	background: #333;
+	color:white;
+}
+#user_login_menu_btn {
+	display:block;
+}
+.login_menu_item {
+	color:white;
+	display:block;
+	background: #333;
+	transition: color 1s, text-shadow 2s, background 3s;
+	/*margin: auto;*/
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.login_menu_item:hover {
+	color: #99f;
+	text-shadow: 0 0 5px #FFFFFF;
+	background: #444;
+}

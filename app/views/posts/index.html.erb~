@@ -1,7 +1,10 @@
 <h2>Welcome to your Blig!</h2>
+<%= controller.current_user.role %>
+<% if can? :manage, Post.new %>
 <%= link_to 'Create a new post', new_post_path %><br>
+<% end %>
 <% controller.all_posts.each do |post| %>
-<%= post.title %><br>
+<strong><%= post.title %></strong><br>
 <%= post.body %><br>
 Published: <%= post.created_at %><br>
 <% end %>

@@ -13,7 +13,7 @@
 <%= current_user.email %>
 <%= link_to '<div class="signin_out_btn">Sign out</div>'.html_safe, sign_out_path, method: :delete %>
 <% else %>
-<a href="./"><div class="user_name_btn">Welcome to BligBlog</div></a>
+<%= link_to '<div class="user_name_btn">Welcome to BligBlog</div>'.html_safe, './'  %>
 <%= link_to '<div class="signin_out_btn">Sign in</div>'.html_safe, sign_in_path %>
 <% end %>
 </div>
