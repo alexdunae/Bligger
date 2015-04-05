@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   attr_reader :all_posts
   attr_accessor :new_post
+  attr_accessor :edit_post
   def index
   	@all_posts = Post.all
   end
@@ -11,6 +12,16 @@ class PostsController < ApplicationController
 
   def new
   	@new_post = Post.new
+  end
+  
+  def edit
+  	@edit_post = Post.find(params[:id])
+  end
+
+  def update
+   post = Post.find(params[:id])
+   post.update(post_params)
+   redirect_to 'index'
   end
 private
   

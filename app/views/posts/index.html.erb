@@ -6,4 +6,7 @@
 <strong><%= post.title %></strong><br>
 <%= post.body %><br>
 Published: <%= post.created_at %><br>
+<% if can? :manage, post %>
+<%= link_to 'Edit', edit_post_path(post) %><br>
+<% end %>
 <% end %>

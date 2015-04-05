@@ -1,4 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
 body {
+	font-family: 'Droid Sans', sans;
 	margin: 0px;
 }
 .user_stat_bar {
@@ -9,7 +12,7 @@ body {
 	background: #222;
 	color: white;
 	font-size: 1em;
-	font-family: 'Myriad Pro', sans;
+	/*font-family: 'Droid Sans', sans;*/
 	padding-left: 5px;
 }
 .user_stat_bar .user_name_btn {
@@ -53,9 +56,15 @@ ul {
 	margin: 0px;
 }
 #user_login_menu {
+/*	float: right;*/
 	display: none;
-	background: #333;
+	background: #222;
 	color:white;
+	position:absolute;
+	top: 30px;
+	right: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 #user_login_menu_btn {
 	display:block;

@@ -13,9 +13,34 @@
 <%= current_user.email %>
 <%= link_to '<div class="signin_out_btn">Sign out</div>'.html_safe, sign_out_path, method: :delete %>
 <% else %>
-<%= link_to '<div class="user_name_btn">Welcome to BligBlog</div>'.html_safe, './'  %>
-<%= link_to '<div class="signin_out_btn">Sign in</div>'.html_safe, sign_in_path %>
+<a href="./"><div class="user_name_btn">Welcome to BligBlog</div></a>
+
+
+<div id="user_login_menu_btn">
+<a href="<%= sign_in_path %>">
+	<div class="signin_out_btn">
+		Sign In
+	</div>
+</a>
+<span id="user_login_menu">
+<ul>
+<li>
+<%= render "sessions/form" %>
+</li>
+</ul>
+</span>
+</div>
+
 <% end %>
+<script>
+$("#user_login_menu").hide();
+
+$("#user_login_menu_btn").hover(function(){
+	$("#user_login_menu").fadeIn('slow').css("display","inline-block");
+}, function(){
+	$("#user_login_menu").fadeOut('slow', function() { $("#user_login_menu").css("display","none"); });
+});
+</script>
 </div>
 <div id="flash">
 <% flash.each do |key, value| %>
