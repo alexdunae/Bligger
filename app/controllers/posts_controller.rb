@@ -41,9 +41,6 @@ class PostsController < ApplicationController
   			Post.destroy(params[:id])
   			@destroy_post_id = '#post'+params[:id].to_s
   			puts 'going to destroy: '+@destroy_post_id
-  			#print 'responding with destroy response'
-  			#render 'destroy'
-  			#render 'destroy_response'
   		}
   	end
   end
