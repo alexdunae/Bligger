@@ -1,0 +1,1 @@
+$("#post<%= @destroy_post_id %>").remove();

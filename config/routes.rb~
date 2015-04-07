@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
 	root 'posts#index'
 	
-	resources :posts, only: [:index, :create, :new, :delete, :edit] do
+	resources :posts
 	
-	end
+	get 'posts/edit' => 'posts#edit_posts' #{:action=>"edit_posts", :controller=>"posts"}
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

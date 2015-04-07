@@ -1,0 +1,6 @@
+<div id="admin_sidebar">
+<% if can? :manage, Post.new %>
+<%= link_to 'New Post', new_post_path, :class=>'bligger_btn' %>
+<%= link_to 'Edit Post', posts_edit_path, :class=>'bligger_btn' %>
+<% end %>
+</div>

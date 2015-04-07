@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 	root 'posts#index'
 	
+	get 'posts/edit' => 'posts#edit_posts'
+	
 	resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.

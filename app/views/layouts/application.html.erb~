@@ -11,23 +11,16 @@
 <div class="user_stat_bar">
 <% if signed_in? %>
 <%= current_user.email %>
-<%= link_to '<div class="signin_out_btn">Sign out</div>'.html_safe, sign_out_path, method: :delete %>
+<%= link_to '<div class="signin_out_btn bligger_btn">Sign out</div>'.html_safe, sign_out_path, method: :delete %>
 <% else %>
-<a href="./"><div class="user_name_btn">Welcome to BligBlog</div></a>
+<a class="user_name_btn bligger_btn" href="./">Welcome to BligBlog</a>
 
 
 <div id="user_login_menu_btn">
-<a href="<%= sign_in_path %>">
-	<div class="signin_out_btn">
-		Sign In
-	</div>
-</a>
+<%= link_to 'Sign In', sign_in_path, :class=>'signin_out_btn bligger_btn' %>
+
 <span id="user_login_menu">
-<ul>
-<li>
 <%= render "sessions/form" %>
-</li>
-</ul>
 </span>
 </div>
 
@@ -49,7 +42,19 @@ $("#user_login_menu_btn").hover(function(){
 </div>
 </header>
 
+<% if signed_in? %>
+<%= render 'sessions/admin_sidebar' %>
+
+<% if can? :manage, Post.new %>
+<div id="content" style="position:relative; left:110px">
+<% else %>
+<div id="content">
+<% end %>
+
+<% end %>
+
 <%= yield %>
 
+</div>
 </body>
 </html>
