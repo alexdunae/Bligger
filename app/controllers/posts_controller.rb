@@ -35,9 +35,9 @@ class PostsController < ApplicationController
   end
   
   def destroy
-  	
   	Post.destroy(params[:id])
   	@destroy_post_id = 'post'+params[:id].to_s
+  	puts 'going to destroy: '+@destroy_post_id
   	#redirect_to :action=>'index'
   	respond_to do |fmt|
   		fmt.html {  }
