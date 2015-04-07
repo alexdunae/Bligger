@@ -1,11 +1,14 @@
 <h2>Edit your plosts</h2>
 <table class="bligedttbl">
 <% controller.all_posts.each do |post| %>
-<tr id="<%= post %>">
+<tr id="post<%= post.id %>">
 <td style="padding-right: 10px;"><%= post.title %></td>
 <td><%= link_to 'Edit ', edit_post_path(post) %></td>
 <td><%= link_to 'Delete', post, :method=>:delete, format: :js, remote: true %></td>
 </tr>
 <% end %>
 </table>
+<script>
+$('body').css('background', '#000');
+</script>
 
