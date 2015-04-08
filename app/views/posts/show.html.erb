@@ -2,3 +2,19 @@
 <h2><%= post.title %></h2>
 <br>
 <%= post.body %>
+<hr>
+<%= render 'comments/form' %>
+<hr>
+<table>
+<% comments = Comment.where(:post_id=>post.id)
+
+	comments.each do |comment|
+%>
+<tr>
+<td>
+<strong><%= comment.name %> says:</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= comment.body %><br>
+</td>
+</tr>
+<% end %>
+</table>

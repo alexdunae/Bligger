@@ -26,7 +26,6 @@ body {
 #content {
 	float:left;
 	width: 80%;
-	/*height: 100%;*/
 }
 /* link */
 .post_title {
@@ -66,7 +65,6 @@ body {
 	background: #222;
 	color: white;
 	font-size: 1em;
-	/*font-family: 'Droid Sans', sans;*/
 	padding-left: 5px;
 }
 .user_stat_bar .user_name_btn {
@@ -129,4 +127,10 @@ ul {
 }
 .wysihtml5-toolbar li {
 	float: left;
+}
+.blig_cmnt_nm_fld {
+	width: 40%;
+}
+.blig_cmnt_textarea {
+	width: 50%;
 }

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 	
 	get 'posts/edit' => 'posts#edit_posts'
 	
-	resources :posts
+	get 'comments/moderate' => 'comments#moderate'
+	
+	resources :posts do
+		resources :comments
+	end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -128,3 +128,9 @@ ul {
 .wysihtml5-toolbar li {
 	float: left;
 }
+.blig_cmnt_nm_fld {
+	width: 25%;
+}
+.blig_cmnt_textarea {
+	width: 35%;
+}

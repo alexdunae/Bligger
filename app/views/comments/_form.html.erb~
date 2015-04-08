@@ -1,0 +1,8 @@
+<%= form_for([@the_post, Comment.new], controller: :comments, method: :create, remote: true, :class=>'form-group') do |f| %>
+Name*:<br>
+<%= f.text_field :name, :class=>'form-control blig_cmnt_nm_fld', :required=>true %><br>
+Comment:<br>
+<%= f.text_area :body, :class=>'form-control blig_cmnt_textarea' %>
+<%= f.hidden_field :post_id, :value=>@the_post.id %><br>
+<%= f.submit 'Comment', :class=>'form-control', :style=>"width:90px;" %>
+<% end %>

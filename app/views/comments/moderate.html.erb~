@@ -1,0 +1,13 @@
+<h2>Moderate the Comments</h2>
+<table>
+<% controller.all_comments.each do |comment| %>
+<tr>
+<td style="padding-right: 10px;">
+<%= comment.body[0..10] %>... 
+</td>
+<td><%= comment.name %></td>
+<td><%= link_to 'Edit ', edit_post_comment_path(Post.find(comment.post_id), comment) %></td>
+<td><%= link_to 'Delete', comment, :method=>:delete, format: :js, remote: true %></td>
+</tr>
+<% end %>
+</table>

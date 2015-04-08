@@ -36,11 +36,9 @@ class PostsController < ApplicationController
   
   def destroy
   	respond_to do |fmt|
-  		#fmt.html {  }
   		fmt.js {
   			Post.destroy(params[:id])
   			@destroy_post_id = '#post'+params[:id].to_s
-  			puts 'going to destroy: '+@destroy_post_id
   		}
   	end
   end
