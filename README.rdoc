@@ -1,28 +1,12 @@
-== README
+== Bligger
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* clone and run bundle install
 
-Things you may want to cover:
+* if bundle install fails due to permissions, chmod user and group to your users on the entire directory recursively
 
-* Ruby version
+* run the site with bin/rails server -b 0.0.0.0
 
-* System dependencies
+* a user can register for the site but at this time making a user admin must be done by going to the rails console and manually assigning a user admin status.
+* an admin user can create, edit and delete posts and comments.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* comments can be made by any user but must provide a name
