@@ -22,6 +22,11 @@ body {
 	padding-top: 2px;
 	padding-bottom: 2px;
 }
+.admin_ctnt_prev {
+	position: absolute;
+	color: white;
+	background: #222;
+}
 
 #content {
 	float:left;
@@ -129,8 +134,8 @@ ul {
 	float: left;
 }
 .blig_cmnt_nm_fld {
-	width: 40%;
+	width: 25%;
 }
 .blig_cmnt_textarea {
-	width: 50%;
+	width: 35%;
 }

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 	
 	get 'comments/moderate' => 'comments#moderate'
 	
+	get 'comment/:id/prev' => 'comments#preview' as: 'comment_prev'
+	
 	resources :posts do
 		resources :comments
 	end

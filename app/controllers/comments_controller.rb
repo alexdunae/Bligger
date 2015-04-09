@@ -12,6 +12,9 @@ class CommentsController < ApplicationController
 	def edit
 		@the_comment = Comment.find(params[:id])
 	end
+	def preview
+		print 'the preview method is called'
+	end
 	attr_reader :all_comments
 private
 	def comment_params

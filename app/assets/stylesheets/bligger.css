@@ -22,6 +22,11 @@ body {
 	padding-top: 2px;
 	padding-bottom: 2px;
 }
+.admin_ctnt_prev {
+	position: absolute;
+	color: white;
+	background: #222;
+}
 
 #content {
 	float:left;

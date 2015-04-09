@@ -1,13 +1,20 @@
 <h2>Moderate the Comments</h2>
 <table>
+<tr>
+<th>Post</th><th>Content</th><th>Name</th><th colspan="2">Moderation</th>
+</tr>
 <% controller.all_comments.each do |comment| %>
 <tr>
+<% my_post = Post.find(comment.post_id) %>
 <td style="padding-right: 10px;">
-<%= comment.body[0..10] %>... 
+<%= my_post.title[0..10] %>...
+</td>
+<td style="padding-right: 10px;">
+<%= link_to comment.body[0..20], comment_prev_path(comment), :id=>'cmnt'+comment.id, :method=>:get, :action=>'preview', :remote=>true %>... 
 </td>
 <td><%= comment.name %></td>
-<td><%= link_to 'Edit ', edit_post_comment_path(Post.find(comment.post_id), comment) %></td>
-<td><%= link_to 'Delete', comment, :method=>:delete, format: :js, remote: true %></td>
+<td><%= link_to 'Edit ', edit_post_comment_path(my_post, comment), :style=>'padding-right: 5px;padding-left:5px;' %></td>
+<td><%= link_to 'Delete', post_comment_path(my_post,comment), :method=>:delete, format: :js, remote: true %></td>
 </tr>
 <% end %>
 </table>
