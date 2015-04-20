@@ -7,9 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user = User.find(:email=>'admin@blig.com')
-
-if user != nil
-
-	user.role = 0
-	user.save
-end
+user.role = 0
+user.save

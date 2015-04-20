@@ -10,7 +10,9 @@
 <%= my_post.title[0..10] %>...
 </td>
 <td style="padding-right: 10px;">
-<%= link_to comment.body[0..20], comment_prev_path(comment), :id=>'cmnt'+comment.id, :method=>:get, :action=>'preview', :remote=>true %>... 
+<%= link_to comment.body[0..20]+(comment.body.length > 20 ? '...' : ''), comment_prev_path(comment),
+	:id=>'cmnt'+comment.id.to_s, :method=>:get, :action=>'preview', :remote=>true %> 
+<span id="cmntsp<%= comment.id %>"></span>
 </td>
 <td><%= comment.name %></td>
 <td><%= link_to 'Edit ', edit_post_comment_path(my_post, comment), :style=>'padding-right: 5px;padding-left:5px;' %></td>
@@ -18,3 +20,5 @@
 </tr>
 <% end %>
 </table>
+<script>
+$("span").hide();

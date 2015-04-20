@@ -10,8 +10,8 @@
 <header>
 <div class="user_stat_bar">
 <% if signed_in? %>
-<%= current_user.email %>
-<%= link_to '<div class="signin_out_btn bligger_btn">Sign out</div>'.html_safe, sign_out_path, method: :delete %>
+<%= link_to 'Home', root_path, :class=>'signin_out_btn bligger_btn', :style=>'float:left;padding-left:10px;' %><%= current_user.email %>
+<%= link_to 'Sign out', sign_out_path, method: :delete, :class=>"signin_out_btn bligger_btn"%>
 <% else %>
 <a class="user_name_btn bligger_btn" href="./">Welcome to BligBlog</a>
 
@@ -51,6 +51,15 @@ $("#user_login_menu_btn").hover(function(){
 <div id="content">
 <% end %>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
+</script>
 <% end %>
 
 <%= yield %>
