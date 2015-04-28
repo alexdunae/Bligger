@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150325203520) do
     t.string   "title"
     t.text     "body"
     t.boolean  "published",  default: true, null: false
+    t.integer  "user_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -34,9 +35,9 @@ ActiveRecord::Schema.define(version: 20150325203520) do
     t.string   "email"
     t.string   "pw_digest"
     t.integer  "posts_id"
-    t.integer  "role"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.integer  "role",                           default: 2
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "encrypted_password", limit: 128
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128
