@@ -1,3 +1,0 @@
-console.log('POST TO DELETE: '+'#post'+@destroy_post_id);
-<% print 'inside destroy.js.erb, to destroy: '+@destroy_post_id %>
-$('<%= @destroy_post_id %>').remove();

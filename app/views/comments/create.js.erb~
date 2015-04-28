@@ -1,1 +1,0 @@
-$('table').append('<tr><strong><%= @the_comment.name %> says:</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;<%= @the_comment.body %></tr>');
