@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  # Good thinking -- unfortunately even though this is a regular Ruby class, Rails
+  # doesn't treat the `attr_` macros the way you'd expect.  You're looking for
+  # `helper_method`...
   attr_reader :all_posts
   attr_accessor :new_post
   attr_accessor :edit_post
@@ -6,7 +9,7 @@ class PostsController < ApplicationController
   def index
   	@all_posts = Post.all
   end
-  
+
   def edit_posts
   	index
   end
@@ -19,11 +22,11 @@ class PostsController < ApplicationController
   def new
   	@new_post = Post.new
   end
-  
+
   def edit
   	@edit_post = Post.find(params[:id])
   end
-  
+
   def show
   	@the_post = Post.find(params[:id])
   end
@@ -33,7 +36,7 @@ class PostsController < ApplicationController
    post.update(post_params)
    redirect_to :action=>'index'
   end
-  
+
   def destroy
   	respond_to do |fmt|
   		fmt.js {
@@ -43,8 +46,8 @@ class PostsController < ApplicationController
   	end
   end
 private
-  
+
   def post_params
   	params.require(:post).permit(:title, :body)
-  end  
+  end
 end

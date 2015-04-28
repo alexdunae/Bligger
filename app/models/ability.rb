@@ -6,18 +6,18 @@ class Ability
   	# 0: admin
   	# 1: user
   	# 2: guest
-  	
+
   	user ||= User.new
   	#user.role = 2
-  	
+
   	if user.role == 0
-  		print "This user can manage stuff"
+  		Rails.logger.debug "This user can manage stuff"
   		can :manage, :all
   	else
-  		print 'This user may only read'
+  		Rails.logger.debug 'This user may only read'
   		can :read, :all
   	end
-  	
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

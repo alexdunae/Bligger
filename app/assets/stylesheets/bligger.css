@@ -31,6 +31,8 @@ body {
 #content {
 	float:left;
 	width: 80%;
+	/* couldn't see the content when logged out */
+	margin-left: 10%;
 }
 /* link */
 .post_title {

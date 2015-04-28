@@ -18,6 +18,10 @@ class AddClearanceToUsers < ActiveRecord::Migration
         WHERE id = '#{user['id']}'
       SQL
     end
+
+    # Nice problem solving here.  You could also do this with:
+    #
+    #   User.where(remember_token: nil).update_all(remember_token: Clearance::Token.new)
   end
 
   def self.down

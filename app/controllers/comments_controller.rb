@@ -26,6 +26,9 @@ class CommentsController < ApplicationController
 		Comment.find(params[:id]).update(comment_params)
 		redirect_to :action=>'moderate'
 	end
+
+	# definitely a decent idea -- a more Rails-y way would be to make `all_comments`
+	# a helper method: http://apidock.com/rails/AbstractController/Helpers/ClassMethods/helper_method
 	attr_reader :all_comments
 private
 	def comment_params
