@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.find(:email=>'admin@blig.com')
-
-if user != nil
-
-	user.role = 0
-	user.save
+user = User.find_or_create_by(email: 'admin@blig.com') do |u|
+  u.password = 'password'
+  u.save!
 end
+
+user.update!(role: 0)
+
